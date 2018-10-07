@@ -47,7 +47,7 @@ class Stock {
     func getNewsData(completed : @escaping () -> ()){
         
         if let symbol = _symbol {
-            let newsURL = Utilities.constructIEXAPIQuery(symbol: symbol, type: "news" , range : IEXAPIConstants.range.none)
+            let newsURL = Utilities.constructIEXAPIQuery(symbol: symbol, type: IEXAPIConstants.type.news, range : IEXAPIConstants.range.none)
             Alamofire.request(newsURL).responseJSON { (response) in
                 let json = JSON(response.result.value)
                 self.setNews(json: json)
