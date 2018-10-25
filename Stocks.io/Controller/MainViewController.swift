@@ -19,7 +19,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     //Outlets
     @IBAction func menuButton(_ sender: UIButton) {
         DispatchQueue.main.async {
-            if self.sideBarIsVisible{
+            if self.stockTableView.frame.minX == 0{
                 UIView.transition(with: self.stockTableView, duration: 0.15, options: .curveEaseIn, animations: {
                     
                     self.stockTableView.frame = CGRect(x: self.stockTableView.frame.minX - self.stockTableView.frame.width, y: 0, width: self.stockTableView.frame.width, height: self.stockTableView.frame.height)
