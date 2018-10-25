@@ -23,14 +23,12 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
                 UIView.transition(with: self.stockTableView, duration: 0.15, options: .curveEaseIn, animations: {
                     
                     self.stockTableView.frame = CGRect(x: self.stockTableView.frame.minX - self.stockTableView.frame.width, y: 0, width: self.stockTableView.frame.width, height: self.stockTableView.frame.height)
-                    self.sideBarIsVisible = !self.sideBarIsVisible
                 }, completion: nil)
             } else {
                 if self.stockTableView.frame.minX != 0{
                     UIView.transition(with: self.stockTableView, duration: 0.15, options: .curveEaseIn, animations: {
                         
                         self.stockTableView.frame = CGRect(x: self.stockTableView.frame.minX + self.stockTableView.frame.width, y: 0, width: self.stockTableView.frame.width, height: self.stockTableView.frame.height)
-                        self.sideBarIsVisible = !self.sideBarIsVisible
                     }, completion: nil)
                 }
             }
@@ -41,7 +39,6 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
         if !symbolArray.contains(stockSymbolLabel.text!) {
             symbolArray.append(stockSymbolLabel.text!)
             defaults.set(symbolArray, forKey: "symbolArray")
-            sideBarIsVisible = !sideBarIsVisible
             stockTableView.reloadData()
         }
     }
@@ -71,7 +68,6 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     private var stock : Stock = Stock()
     private var symbolArray : [String] = [String]()
     private var userdefaults = UserDefaults()
-    private var sideBarIsVisible = false
     
     
     override func viewDidLayoutSubviews() {
@@ -281,7 +277,6 @@ extension MainViewController : UITableViewDelegate , UITableViewDataSource {
         
         //Automatically snaps due to constraint position, DO NOT WANT
         if (tableView.dequeueReusableCell(withIdentifier: UIConstants.stockCellID ) as? StockCellTableViewCell) != nil{
-            sideBarIsVisible = !sideBarIsVisible
         }
         
         

@@ -153,6 +153,7 @@ extension Stock {
         set.circleRadius = ChartFormattingConstants.circleRadius
         set.valueFont = UIConstants.Font.mainFont
         set.mode = .cubicBezier
+        set.drawValuesEnabled = false
         set.cubicIntensity = ChartFormattingConstants.cubicIntensity
         let gradientColors = [teal.cgColor ,UIColor.clear.cgColor] as CFArray
         let colorLocations : [CGFloat] = [1.0,0.0]
