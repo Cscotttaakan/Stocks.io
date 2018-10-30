@@ -78,21 +78,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let path = Bundle.main.path(forResource: "companiesnasdaq", ofType: "json") {
-            do {
-                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-                //parse data here
-                //If you are using SwiftyJSON use below commanded line
-                // let jsonObj = try JSON(data: data)
-                companies = try JSON(data)
-                print(companies)
-                
-            } catch let error {
-                print("parse error: \(error.localizedDescription)")
-            }
-        } else {
-            print("Invalid filename/path.")
-        }
+        
         
         setMainLayout()
         loadPreferences()

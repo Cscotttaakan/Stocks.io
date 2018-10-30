@@ -436,36 +436,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-cH-RIc">
-                                <rect key="frame" x="0.0" y="79" width="375" height="56"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-jb-eqX">
                                 <rect key="frame" x="0.0" y="219" width="375" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hr8-ru-V7g">
+                                <rect key="frame" x="0.0" y="86" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="searchBar:" destination="3N4-94-04Y" eventType="editingDidEnd" id="0S6-rr-sxC"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.81568627449999997" green="0.99215686270000003" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="trailing" secondItem="Tlb-Lx-TZB" secondAttribute="trailing" id="5Uf-tY-Ujr"/>
+                            <constraint firstItem="Hr8-ru-V7g" firstAttribute="leading" secondItem="Tlb-Lx-TZB" secondAttribute="leading" id="Nzg-V4-cBH"/>
                             <constraint firstItem="Tlb-Lx-TZB" firstAttribute="trailing" secondItem="GP6-jb-eqX" secondAttribute="trailing" id="SEP-IH-p3Z"/>
-                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="leading" secondItem="Tlb-Lx-TZB" secondAttribute="leading" id="UaJ-EP-x6W"/>
+                            <constraint firstItem="Hr8-ru-V7g" firstAttribute="top" secondItem="Tlb-Lx-TZB" secondAttribute="top" constant="42" id="cfI-Uh-Cbg"/>
                             <constraint firstItem="Tlb-Lx-TZB" firstAttribute="bottom" secondItem="GP6-jb-eqX" secondAttribute="bottom" constant="431" id="dHI-71-VHc"/>
-                            <constraint firstItem="GP6-jb-eqX" firstAttribute="top" secondItem="3Hm-cH-RIc" secondAttribute="bottom" constant="84" id="dnQ-fH-2MO"/>
-                            <constraint firstItem="GP6-jb-eqX" firstAttribute="top" secondItem="3Hm-cH-RIc" secondAttribute="bottom" constant="84" id="lBI-Sm-dsm"/>
-                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="top" secondItem="Tlb-Lx-TZB" secondAttribute="top" constant="35" id="oaH-Vo-anb"/>
+                            <constraint firstItem="GP6-jb-eqX" firstAttribute="top" secondItem="Hr8-ru-V7g" secondAttribute="bottom" constant="103" id="hl1-gV-MO9"/>
+                            <constraint firstItem="Hr8-ru-V7g" firstAttribute="trailing" secondItem="Tlb-Lx-TZB" secondAttribute="trailing" id="lwH-2E-zT7"/>
                             <constraint firstItem="GP6-jb-eqX" firstAttribute="leading" secondItem="Tlb-Lx-TZB" secondAttribute="leading" id="zRH-QW-N5h"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Tlb-Lx-TZB"/>
                     </view>
                     <connections>
-                        <outlet property="searchBar" destination="3Hm-cH-RIc" id="Kdj-4l-wBH"/>
+                        <outlet property="searchBar" destination="Hr8-ru-V7g" id="yo4-Xi-o8a"/>
                         <outlet property="searchResults" destination="GP6-jb-eqX" id="rUX-Ph-RI0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nMz-kM-7HJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="995" y="80"/>
+            <point key="canvasLocation" x="994.39999999999998" y="79.802955665024641"/>
         </scene>
         <!--Help-->
         <scene sceneID="uPM-AQ-zNc">

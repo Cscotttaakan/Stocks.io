@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks.io/Controller/MainViewController.swift"
-            timestampString = "562607443.4553961"
+            timestampString = "562609236.05634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "71"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks.io/Controller/MainViewController.swift"
-            timestampString = "562607443.455585"
+            timestampString = "562609236.056446"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "270"
+            endingLineNumber = "270"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Stocks.io/Controller/MainViewController.swift"
-            timestampString = "562607443.4557149"
+            timestampString = "562609236.056567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "refreshPage(symbol:)"
             landmarkType = "7">
          </BreakpointContent>
