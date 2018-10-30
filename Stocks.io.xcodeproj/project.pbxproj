@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		53CE1E78994D296A062E129D /* Pods_Stocks_io.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA2837CF2EA47AFAB2AD453 /* Pods_Stocks_io.framework */; };
 		E1039DBF2163D921003FCBBE /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1039DBE2163D921003FCBBE /* GIF.swift */; };
+		E1060C4F2188AD830081BF74 /* companiesnasdaq.json in Resources */ = {isa = PBXBuildFile; fileRef = E1060C4E2188AD830081BF74 /* companiesnasdaq.json */; };
+		E1060C522188B4530081BF74 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1060C512188B4530081BF74 /* SearchViewController.swift */; };
 		E10AC58E215BF09F00E96B1F /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AC58D215BF09F00E96B1F /* Stock.swift */; };
 		E10AC591215BF27B00E96B1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AC590215BF27B00E96B1F /* Constants.swift */; };
 		E10AC593215BF7B900E96B1F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10AC592215BF7B900E96B1F /* Utilities.swift */; };
@@ -49,6 +51,9 @@
 		5DA2837CF2EA47AFAB2AD453 /* Pods_Stocks_io.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stocks_io.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D960CD16E08C209150AFBBF0 /* Pods-Stocks.io.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stocks.io.debug.xcconfig"; path = "Target Support Files/Pods-Stocks.io/Pods-Stocks.io.debug.xcconfig"; sourceTree = "<group>"; };
 		E1039DBE2163D921003FCBBE /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
+		E1060C4E2188AD830081BF74 /* companiesnasdaq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = companiesnasdaq.json; path = ../../../../Downloads/companiesnasdaq.json; sourceTree = "<group>"; };
+		E1060C502188AF3D0081BF74 /* companiesnasdaq.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = companiesnasdaq.json; sourceTree = "<group>"; };
+		E1060C512188B4530081BF74 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E10AC58D215BF09F00E96B1F /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
 		E10AC590215BF27B00E96B1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E10AC592215BF7B900E96B1F /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
@@ -112,6 +117,14 @@
 			path = Extras;
 			sourceTree = "<group>";
 		};
+		E14FA27E2188228A0048903D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E1060C4E2188AD830081BF74 /* companiesnasdaq.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		E1D3BE10215B59BE00B42453 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +147,7 @@
 		E1D3BE1B215B59BE00B42453 /* Stocks.io */ = {
 			isa = PBXGroup;
 			children = (
+				E14FA27E2188228A0048903D /* Data */,
 				E1E35F462163E0410095CCB4 /* GIF */,
 				E10AC58F215BF27000E96B1F /* Extras */,
 				E1D3BE34215B5FDB00B42453 /* Controller */,
@@ -173,7 +187,9 @@
 		E1D3BE34215B5FDB00B42453 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E1060C502188AF3D0081BF74 /* companiesnasdaq.json */,
 				E1D3BE1E215B59BE00B42453 /* MainViewController.swift */,
+				E1060C512188B4530081BF74 /* SearchViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -250,6 +266,7 @@
 			files = (
 				E1E19B61216033BC007F0376 /* LaunchScreen.storyboard in Resources */,
 				E1D3BE24215B59C200B42453 /* Assets.xcassets in Resources */,
+				E1060C4F2188AD830081BF74 /* companiesnasdaq.json in Resources */,
 				E1D3BE22215B59BF00B42453 /* Main.storyboard in Resources */,
 				E1E35F482163E0540095CCB4 /* help.gif in Resources */,
 			);
@@ -305,6 +322,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1060C522188B4530081BF74 /* SearchViewController.swift in Sources */,
 				E1BF5E59215D443600C7BC40 /* StockSymbolTextField.swift in Sources */,
 				E1D3BE1F215B59BE00B42453 /* MainViewController.swift in Sources */,
 				E1D3BE1D215B59BE00B42453 /* AppDelegate.swift in Sources */,

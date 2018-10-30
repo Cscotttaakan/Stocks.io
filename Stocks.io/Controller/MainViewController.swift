@@ -16,6 +16,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     //Defaults
     let defaults = UserDefaults.standard
     
+    
     //Outlets
     @IBAction func menuButton(_ sender: UIButton) {
         DispatchQueue.main.async {
@@ -68,7 +69,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     private var stock : Stock = Stock()
     private var symbolArray : [String] = [String]()
     private var userdefaults = UserDefaults()
-    
+    private var companies : JSON = []
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -77,6 +78,22 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let path = Bundle.main.path(forResource: "companiesnasdaq", ofType: "json") {
+            do {
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
+                //parse data here
+                //If you are using SwiftyJSON use below commanded line
+                // let jsonObj = try JSON(data: data)
+                companies = try JSON(data)
+                print(companies)
+                
+            } catch let error {
+                print("parse error: \(error.localizedDescription)")
+            }
+        } else {
+            print("Invalid filename/path.")
+        }
+        
         setMainLayout()
         loadPreferences()
         refreshPage(symbol : stockSymbolLabel.text!)

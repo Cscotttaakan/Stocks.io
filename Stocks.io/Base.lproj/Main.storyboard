@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="itB-Ff-GSc">
-    <device id="retina6_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3N4-94-04Y">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -327,7 +327,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" id="hRl-Qx-QVR" customClass="StockCellTableViewCell" customModule="Stocks_io" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="StockCell" id="hRl-Qx-QVR" customClass="StockCellTableViewCell" customModule="Stocks_io" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="220" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hRl-Qx-QVR" id="SML-gU-uKS">
@@ -335,7 +335,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stocks.io" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enl-Yn-jlZ">
-                                                    <rect key="frame" x="48" y="5" width="133" height="53.333333333333336"/>
+                                                    <rect key="frame" x="48.333333333333329" y="5" width="133" height="53.333333333333336"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="133" id="DLB-aO-5Kr"/>
                                                         <constraint firstAttribute="height" constant="53" id="Xnd-k2-xKl"/>
@@ -428,12 +428,51 @@
             </objects>
             <point key="canvasLocation" x="133.59999999999999" y="132.68365817091455"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="KlB-oO-5OH">
+            <objects>
+                <viewController id="3N4-94-04Y" customClass="SearchViewController" customModule="Stocks_io" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RNC-p3-bpP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="3Hm-cH-RIc">
+                                <rect key="frame" x="0.0" y="79" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GP6-jb-eqX">
+                                <rect key="frame" x="0.0" y="219" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.99215686270000003" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="trailing" secondItem="Tlb-Lx-TZB" secondAttribute="trailing" id="5Uf-tY-Ujr"/>
+                            <constraint firstItem="Tlb-Lx-TZB" firstAttribute="trailing" secondItem="GP6-jb-eqX" secondAttribute="trailing" id="SEP-IH-p3Z"/>
+                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="leading" secondItem="Tlb-Lx-TZB" secondAttribute="leading" id="UaJ-EP-x6W"/>
+                            <constraint firstItem="Tlb-Lx-TZB" firstAttribute="bottom" secondItem="GP6-jb-eqX" secondAttribute="bottom" constant="431" id="dHI-71-VHc"/>
+                            <constraint firstItem="GP6-jb-eqX" firstAttribute="top" secondItem="3Hm-cH-RIc" secondAttribute="bottom" constant="84" id="dnQ-fH-2MO"/>
+                            <constraint firstItem="GP6-jb-eqX" firstAttribute="top" secondItem="3Hm-cH-RIc" secondAttribute="bottom" constant="84" id="lBI-Sm-dsm"/>
+                            <constraint firstItem="3Hm-cH-RIc" firstAttribute="top" secondItem="Tlb-Lx-TZB" secondAttribute="top" constant="35" id="oaH-Vo-anb"/>
+                            <constraint firstItem="GP6-jb-eqX" firstAttribute="leading" secondItem="Tlb-Lx-TZB" secondAttribute="leading" id="zRH-QW-N5h"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Tlb-Lx-TZB"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="3Hm-cH-RIc" id="Kdj-4l-wBH"/>
+                        <outlet property="searchResults" destination="GP6-jb-eqX" id="rUX-Ph-RI0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nMz-kM-7HJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995" y="80"/>
+        </scene>
         <!--Help-->
         <scene sceneID="uPM-AQ-zNc">
             <objects>
                 <viewController id="wCX-Ff-BDj" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXK-gn-mhx" customClass="GifView" customModule="Stocks_io" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="czX-go-cQ1"/>
