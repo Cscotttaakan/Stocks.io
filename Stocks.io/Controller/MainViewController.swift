@@ -48,7 +48,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     @IBOutlet weak var paragraphLabel: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var currentValueLabel: UILabel!
-    @IBOutlet weak var stockSymbolLabel: UITextField!
+    @IBOutlet weak var stockSymbolLabel: UILabel!
     @IBOutlet weak var lineGraph: LineChartView!
     @IBOutlet weak var changeLabel: UILabel!
     @IBOutlet weak var lowLabel: UILabel!
@@ -61,6 +61,7 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     @IBOutlet weak var peRatioLabel: UILabel!
     @IBOutlet weak var sectorLabel: UILabel!
     
+    
     @IBOutlet weak var stockTableView: UITableView!
     
     
@@ -69,7 +70,14 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
     private var stock : Stock = Stock()
     private var symbolArray : [String] = [String]()
     private var userdefaults = UserDefaults()
-    private var companies : JSON = []
+    var stockString : String = "" {
+        didSet{
+            defaults.set(stockString, forKey: "symbol")
+            stockSymbolLabel.text = stockString
+            refreshPage(symbol: stockString)
+            stockSymbolLabel.setNeedsDisplay()
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -83,6 +91,17 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
         setMainLayout()
         loadPreferences()
         refreshPage(symbol : stockSymbolLabel.text!)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(initiateSearchVC(sender:)))
+        stockSymbolLabel.isUserInteractionEnabled = true
+        stockSymbolLabel.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    func initiateSearchVC(sender:UITapGestureRecognizer) {
+        let sVC = self.storyboard?.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        
+        self.navigationController?.pushViewController(sVC, animated: true)
     }
     
     func refreshPage(symbol : String){
@@ -236,20 +255,6 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        stockSymbolLabel.resignFirstResponder()
-        return true
-    }
-    
-    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        if let symbol = stockSymbolLabel.text{
-            defaults.set(symbol, forKey: "symbol")
-            refreshPage(symbol: symbol)
-            stockSymbolLabel.setNeedsDisplay()
-        }
-        return true
-    }
-    
 }
 
 extension MainViewController : UITableViewDelegate , UITableViewDataSource {
@@ -303,9 +308,6 @@ extension MainViewController {
         stockTableView.dataSource = self
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isScrollEnabled = true
-        stockSymbolLabel.delegate = self
-        stockSymbolLabel.returnKeyType = .done
-        stockSymbolLabel.autocapitalizationType = .allCharacters
         lineGraph.xAxis.drawGridLinesEnabled = false
         lineGraph.xAxis.labelPosition = .bottom
         lineGraph.xAxis.granularityEnabled = true
