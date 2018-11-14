@@ -95,6 +95,8 @@ class MainViewController: UIViewController , UITextFieldDelegate , UIScrollViewD
         let tap = UITapGestureRecognizer(target: self, action: #selector(initiateSearchVC(sender:)))
         stockSymbolLabel.isUserInteractionEnabled = true
         stockSymbolLabel.addGestureRecognizer(tap)
+        
+        stockSymbolLabel.sizeToFit()
     }
     
     @objc

@@ -17,7 +17,13 @@ class Utilities {
         queryURL.append("/\(symbol.trimmingCharacters(in: .whitespacesAndNewlines))")
         queryURL.append("/\(type)")
         queryURL.append("/\(range)")
-        return URL(string: queryURL)!
+        
+        if let url = URL(string: queryURL)
+        {
+        return url
+        }else{
+            return URL(string: "Error")!
+        }
     }
     
 }

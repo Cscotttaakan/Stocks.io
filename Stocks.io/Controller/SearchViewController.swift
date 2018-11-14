@@ -16,11 +16,10 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "stock")
-        if cell == nil{
-            cell = UITableViewCell(style: .default, reuseIdentifier: "stock")
-        }
-        cell?.textLabel?.text = tempStockSymbols[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell") as? SearchTableViewCell
+        
+        cell?.name.text = tempStockSymbols[indexPath.row].name
+        cell?.symbol.text = tempStockSymbols[indexPath.row].symbol
         return cell!
         
         
@@ -31,7 +30,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         if let nav = self.navigationController{
             for vc in nav.viewControllers{
                 if let main = vc as? MainViewController{
-                    main.stockString = tempStockSymbols[indexPath.row]
+                    main.stockString = tempStockSymbols[indexPath.row].symbol
                 }
             }
             self.navigationController?.popToRootViewController(animated: true)
@@ -44,7 +43,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
     @IBOutlet weak var searchResults: UITableView!
     var companies : JSON = []
     var stockSymbols : [JSON] = [JSON]()
-    var tempStockSymbols : [String] = [String]()
+    var tempStockSymbols : [(symbol:String, name:String)] = [(String,String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +51,8 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
         searchResults.delegate = self
         searchBar.delegate = self
         searchBar.addTarget(self, action: #selector(searchRecords(_ :)), for: .editingChanged)
+        searchBar.autocapitalizationType = UITextAutocapitalizationType.allCharacters
+        searchBar.autocorrectionType = .no
         DispatchQueue.global(qos: .background).async{ [weak self] in
         if let path = Bundle.main.path(forResource: "companiesnasdaq", ofType: "json") {
             do {
@@ -81,13 +82,15 @@ class SearchViewController: UIViewController, UITextFieldDelegate, UITableViewDe
                 if let stockToSearch = textField.text{
                     let range = value.1["Symbol"].stringValue.lowercased().range(of: stockToSearch, options: .caseInsensitive, range: nil, locale: nil)
                     if range != nil{
-                        self.tempStockSymbols.append(value.1["Symbol"].stringValue)
+                        let stock = (value.1["Symbol"].stringValue,value.1["Name"].stringValue)
+                        self.tempStockSymbols.append(stock)
                     }
                 }
             }
         }else{
             for value in companies {
-                tempStockSymbols.append(value.1["Symbol"].stringValue)
+                let stock = (value.1["Symbol"].stringValue,value.1["Name"].stringValue)
+                self.tempStockSymbols.append(stock)
             }
             
         }
