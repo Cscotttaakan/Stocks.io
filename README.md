@@ -1,5 +1,6 @@
 # Stocks.io
-![test image size](launchLogo.png){:height="10%" width="10%"}
+<img src="launchLogo.png" height="100px" width="400px" >
+
 # Stock picker app
   - Real-time graphs
   - API calls to IEXTrading
