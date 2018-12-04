@@ -1,5 +1,5 @@
 # Stocks.io
-![Screenshot](launchLogo.png)
+![Screenshot](launchLogo.png){:height="50%" width="50%"}
 # Stock picker app
   - Real-time graphs
   - API calls to IEXTrading
