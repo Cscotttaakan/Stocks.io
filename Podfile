@@ -7,5 +7,6 @@ target 'Stocks.io' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SwiftyGif'
+  pod 'UIGradient'
 
 end

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIGradient
 
 class RoundedView: UIView {
     override func awakeFromNib() {
