@@ -1,5 +1,5 @@
 # Stocks.io
-<img src="launchLogo.png" height="100px" width="400px" >
+<img src="launchLogo.png" height="300px" width="300px" >
 
 # Stock picker app
   - Real-time graphs
