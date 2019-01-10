@@ -57,3 +57,8 @@ struct timeInterval {
     static let hour = "60min"
     static let none = ""
 }
+
+struct backendConstants{
+    static let testingURL = "https://localhost:8000/"
+    static let deploymentURL = "https://www.stocksio.ml/"
+}

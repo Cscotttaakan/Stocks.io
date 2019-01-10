@@ -17,6 +17,11 @@
 		E12C9BEA215C538B00CB8493 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E12C9BE8215C538B00CB8493 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		E13F2A0A218E5EB500F0B15D /* companiesnasdaq.json in Resources */ = {isa = PBXBuildFile; fileRef = E13F2A09218E5EB400F0B15D /* companiesnasdaq.json */; };
 		E1587269218F643500D50581 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1587268218F643500D50581 /* SearchTableViewCell.swift */; };
+		E15901AE21E015BE006CE67C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15901AD21E015BE006CE67C /* LoginViewController.swift */; };
+		E15901B021E01C2E006CE67C /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15901AF21E01C2E006CE67C /* LoginTextField.swift */; };
+		E15901B221E0FEEC006CE67C /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15901B121E0FEEC006CE67C /* RoundedButton.swift */; };
+		E15901B421E119F5006CE67C /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15901B321E119F5006CE67C /* RegisterViewController.swift */; };
+		E15901B721E1ADE5006CE67C /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15901B621E1ADE5006CE67C /* Profile.swift */; };
 		E1BF5E5E215EDB6300C7BC40 /* newsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BF5E5D215EDB6300C7BC40 /* newsData.swift */; };
 		E1BF5E60215EDB7000C7BC40 /* financialData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BF5E5F215EDB7000C7BC40 /* financialData.swift */; };
 		E1BF5E66215F33CE00C7BC40 /* StockCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BF5E65215F33CE00C7BC40 /* StockCellTableViewCell.swift */; };
@@ -56,6 +61,11 @@
 		E12C9BE8215C538B00CB8493 /* Charts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Charts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F2A09218E5EB400F0B15D /* companiesnasdaq.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = companiesnasdaq.json; path = Stocks.io/Controller/companiesnasdaq.json; sourceTree = SOURCE_ROOT; };
 		E1587268218F643500D50581 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
+		E15901AD21E015BE006CE67C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E15901AF21E01C2E006CE67C /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		E15901B121E0FEEC006CE67C /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		E15901B321E119F5006CE67C /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E15901B621E1ADE5006CE67C /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		E1BF5E5D215EDB6300C7BC40 /* newsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsData.swift; sourceTree = "<group>"; };
 		E1BF5E5F215EDB7000C7BC40 /* financialData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = financialData.swift; sourceTree = "<group>"; };
 		E1BF5E65215F33CE00C7BC40 /* StockCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -162,6 +172,8 @@
 				E1D3BE35215B600000B42453 /* RoundedView.swift */,
 				E1BF5E65215F33CE00C7BC40 /* StockCellTableViewCell.swift */,
 				E1587268218F643500D50581 /* SearchTableViewCell.swift */,
+				E15901AF21E01C2E006CE67C /* LoginTextField.swift */,
+				E15901B121E0FEEC006CE67C /* RoundedButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +185,7 @@
 				E1BF5E5D215EDB6300C7BC40 /* newsData.swift */,
 				E1BF5E5F215EDB7000C7BC40 /* financialData.swift */,
 				E1E19B5B21601FC5007F0376 /* BarChartFormatter.swift */,
+				E15901B621E1ADE5006CE67C /* Profile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +195,8 @@
 			children = (
 				E1D3BE1E215B59BE00B42453 /* MainViewController.swift */,
 				E1060C512188B4530081BF74 /* SearchViewController.swift */,
+				E15901AD21E015BE006CE67C /* LoginViewController.swift */,
+				E15901B321E119F5006CE67C /* RegisterViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -308,17 +323,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1060C522188B4530081BF74 /* SearchViewController.swift in Sources */,
+				E15901B021E01C2E006CE67C /* LoginTextField.swift in Sources */,
 				E1D3BE1F215B59BE00B42453 /* MainViewController.swift in Sources */,
 				E1D3BE1D215B59BE00B42453 /* AppDelegate.swift in Sources */,
+				E15901AE21E015BE006CE67C /* LoginViewController.swift in Sources */,
 				E1BF5E5E215EDB6300C7BC40 /* newsData.swift in Sources */,
 				E10AC593215BF7B900E96B1F /* Utilities.swift in Sources */,
 				E1E19B5C21601FC5007F0376 /* BarChartFormatter.swift in Sources */,
 				E1039DBF2163D921003FCBBE /* GIF.swift in Sources */,
+				E15901B421E119F5006CE67C /* RegisterViewController.swift in Sources */,
 				E1BF5E60215EDB7000C7BC40 /* financialData.swift in Sources */,
 				E1D3BE36215B600000B42453 /* RoundedView.swift in Sources */,
+				E15901B221E0FEEC006CE67C /* RoundedButton.swift in Sources */,
 				E10AC58E215BF09F00E96B1F /* Stock.swift in Sources */,
 				E1D3BE38215B613300B42453 /* Extensions.swift in Sources */,
 				E10AC591215BF27B00E96B1F /* Constants.swift in Sources */,
+				E15901B721E1ADE5006CE67C /* Profile.swift in Sources */,
 				E1BF5E66215F33CE00C7BC40 /* StockCellTableViewCell.swift in Sources */,
 				E1587269218F643500D50581 /* SearchTableViewCell.swift in Sources */,
 			);

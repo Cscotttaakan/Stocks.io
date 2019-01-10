@@ -17,5 +17,9 @@ class LoginTextField: UITextField {
         // Drawing code
     }
     */
+    override func awakeFromNib(){
+        self.layer.borderWidth = 2.0
+        self.layer.borderColor = UIColor.white.cgColor
+    }
 
 }

@@ -17,5 +17,15 @@ class RoundedButton: UIButton {
         // Drawing code
     }
     */
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        //self.addBlurEffect()
+        self.layer.cornerRadius = 10
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.white.cgColor
+        //self.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        self.clipsToBounds = true
+    }
 
 }
